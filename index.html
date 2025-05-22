@@ -63,7 +63,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-              <!-- ..............remove.............. -->
+              <comp-abla!-- ..............remove.............. -->
             <span class="author-block"><sup>1</sup>Anonymous Affiliation,</span>
           </div>
 
@@ -136,7 +136,7 @@
                controls
                preload="auto"
                playsinline
-               width="75%">
+               width="80%">
           <source src="./static/videos/20250514_v8_nips25-zip1500.mp4"
                   type="video/mp4">
         </video>
@@ -145,51 +145,334 @@
   </div>
 </section>
 
-
 <section class="section hero">
-  <div class="container is-max-desktop">
-    <!-- Animation. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-full-width">
+                <h2 class="title is-3">Architecture</h2>
+                <div class="content has-text-centered">
+                    <img src="./static/images/02_01_pipeline_NIPS25.png" alt="CMDer Pipeline" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="content has-text-justified">
+                    <p>
+CMDer is a novel pipeline that generates diverse and editable character animations — all from a single motion example.
+The CMDer architecture consists of three components: (1) the Motion Mode Decomposition Module (MMDecomp) for intrinsic mode decomposition, (2) the Motion Mode Diffusion Network (MMDiffusion), a shallow U-Net improved with Mode Enhancement Block(MEB), and (3) the Motion Mode Composition Module (MMComp), which fuses the diffusion outputs to synthesize final motions. 
+                    </p>
+                  </div>
+            </div>
         </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload="auto"
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-      </div>
     </div>
-    <!--/ Animation. -->
-
-
-  </div>
+    
 </section>
 
 
-<!-- bib -->
-<!-- <section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>
-      ..............remove..............
-    </code></pre>
-  </div>
-</section> -->
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h2 class="title is-3">Temporal-Spatial Conditional Synthesis</h2>
+                <h3 class="title is-4">Motion Completion</h3>
+                <div class="content has-text-justified">
+                    <p>
+                        Fills in missing motion segments with smooth, coherent transitions.
+perfect for in-betweening and expansion.
+(The pink clothes is represented as the input segment, and the rest are the completion animations.)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <p><b>In-betweening</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-inbet.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+                <div class="column is-centered has-text-centered">
+                    <p><b>Expansion</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-expan.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h3 class="title is-4">Keyframe-guided Generation</h3>
+                <div class="content has-text-justified">
+                    <p>
+Generates natural motions that precisely pass through user-defined key poses.
+(The translucent pink clothes are the input motions.)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="75%">
+                        <source src="static/videos/20250514_v8_nips25-app-keyf.mp4" type="video/mp4">
+                    </video>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h3 class="title is-4">Skeletal Conditional Generation</h3>
+                <div class="content has-text-justified">
+                    <p>
+Controls motion style on specific body parts like upper or lower limbs.
+(Pink dress is input reference.)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <p><b>Upper Body</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-upp.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="column is-centered has-text-centered">
+                    <p><b>Lower Body</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-lower.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h3 class="title is-4">Style Transfer</h3>
+                <div class="content has-text-justified">
+                    <p>
+Combines motion styles from different sources to create unique blended animations.
+Unlike traditional approaches, CMDer uses frequency-based mode injection for more coherent and semantically controllable motion blending.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="75%">
+                        <source src="static/videos/20250514_v8_nips25-app-styletsf.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h2 class="title is-3">Straight-forward Synthesis</h2>
+                <h3 class="title is-4">Long Motion Sequence</h3>
+                <div class="content has-text-justified">
+                    <p>
+Seamlessly synthesise motion into longer, consistent animation, even of infinite length. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <p><b>Long Motion</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-longmo.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="column is-centered has-text-centered">
+                    <p><b>Long Motion(1min)</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" controls width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-longmo1min.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h3 class="title is-4">Crowd Animation</h3>
+                <div class="content has-text-justified">
+                    <p>
+Synthesizes diverse motions from one sample to animate large, dynamic crowds. Not limited to humans, anything is possible, such as ostriches.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="75%">
+                        <source src="static/videos/20250514_v8_nips25-app-crowds.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h2 class="title is-3">Mode Editing</h2>
+                <div class="content has-text-justified">
+                    <p>
+Mode Layer Editing edits motion at different frequency levels for structured and interpretable control.
+Mode Keyframe Editing sets keyframe-level motion intent while keeping high-frequency details diverse.
+Even large groups of actors can be controlled, as Mode Keyframe Crowds.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+                <div class="column is-centered has-text-centered">
+                    <p><b>Mode Layer Editing</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-moed-layer.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="column is-centered has-text-centered">
+                    <p><b>Mode Keyframe Editing</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-moed-keyf.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+            <div class="columns is-centered is-four-fifths">
+                <div class="column is-centered has-text-centered">
+                    <p><b>Mode Keyframe Crowds</b></p>
+                    <video poster="" id="tree" playsinline="" autoplay="" muted="" loop="" width="75%">
+                        <source src="static/videos/20250514_v8_nips25-app-moed-keyfcrowds.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="hero is-small is-light">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="column is-centered has-text-centered">
+                <h2 class="title is-3">Modality-Driven Motion Generation</h2>
+                <div class="content has-text-justified">
+                    <p>
+CMDer dynamically links music intensity to motion detail using mode-layer control, enabling driven animations without paired training data.
+(🎵Video with audio)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered is-four-fifths">
+
+                <div class="column is-centered has-text-centered">
+                    <p><b>Music-Canon in D</b></p>
+                    <video poster="static/images/canon.jpg" id="tree" playsinline="" autoplay="" loop="" controls ="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-music-C.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="column is-centered has-text-centered">
+                    <p><b>Music-Rush E</b></p>
+                    <video poster="static/images/rushe.jpg" id="tree" playsinline="" autoplay="" loop="" controls="100%">
+                        <source src="static/videos/20250514_v8_nips25-app-music-E.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
 
 
 <footer class="footer">
